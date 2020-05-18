@@ -1,10 +1,10 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 include "function.php";
-echo color("green","# # # # # # # # # # # # # # # # # # # # # # # \n");
-echo color("yellow","[â€¢]  Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
-echo color("yellow","[â€¢]              waiting proses.....           \n");
-echo color("yellow","[â€¢] GOJEK RANTAUPRAPAT, SALA SATU ASPAL\n");
+echo color("green", "# # # # # # # # # # # # # # # # # # # # # # # \n");
+echo color("white"," [â€¢]  Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
+echo color("blue","  [â€¢]              waiting proses.....       \n");
+echo color("red","   [â€¢] GOJEK RANTAUPRAPAT, SALA SATU ASPAL    \n");
 echo color("green","# # # # # # # # # # # # # # # # # # # # # # # \n");
 function change(){
         $nama = nama();
@@ -50,7 +50,7 @@ function change(){
         echo "\n".color("yellow","!] Please wait");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
-        sleep(20);
+        sleep(3);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"EBADAHMAKANA"}');
         $message = fetch_value($code1,'"message":"','"');
@@ -109,7 +109,7 @@ function change(){
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
          echo color("red","========( PIN ANDA = 121212 )========")."\n";
-         $data2 = '{"pin":"225588"}';
+         $data2 = '{"pin":"121212"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "Otp set pin: ";
          $otpsetpin = trim(fgets(STDIN));
